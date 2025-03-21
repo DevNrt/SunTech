@@ -1,0 +1,126 @@
+/* Importar Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Colores personalizados */
+:root {
+  --bs-primary: #1d4ed8; /* Equivalente al blue-800 de Tailwind */
+  --bs-primary-dark: #1e3a8a; /* Equivalente al blue-900 de Tailwind */
+  --bs-primary-light: #3b82f6; /* Equivalente al blue-500 de Tailwind */
+  --bs-info: #93c5fd; /* Equivalente al blue-200 de Tailwind */
+  --bs-warning: #fcd34d; /* Equivalente al yellow-300 de Tailwind */
+}
+
+/* Estilos personalizados para transiciones y efectos */
+.transition {
+  transition: all 0.3s ease;
+}
+
+.bg-primary-dark {
+  background-color: rgba(30, 58, 138, 0.5); /* blue-900 con opacidad */
+}
+
+.bg-primary-light {
+  border-color: var(--bs-primary-light);
+}
+
+.bg-gradient {
+  background-image: linear-gradient(to right, var(--bs-primary), var(--bs-primary-light), var(--bs-primary));
+}
+
+.bg-opacity-10 {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hover-text-light:hover {
+  color: var(--bs-info) !important;
+}
+
+.hover-primary:hover {
+  color: var(--bs-primary) !important;
+}
+
+.hover-border-primary:hover {
+  border-color: var(--bs-primary) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Tamaños de logo */
+.logo-large {
+  height: 48px;
+  width: 48px;
+  border-width: 2px;
+  border-opacity: 0.7;
+}
+
+.logo-small {
+  height: 40px;
+  width: 40px;
+  border-width: 2px;
+  border-opacity: 0.7;
+}
+
+/* Indicador de estado online */
+.status-indicator {
+  width: 10px;
+  height: 10px;
+}
+
+/* Animación para el envío gratis */
+.free-shipping {
+  animation: pulse 2s infinite;
+}
+
+.btn-icon {
+  background: transparent;
+  color: white;
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.btn-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--bs-info);
+}
+
+.search-icon {
+  margin-right: 10px;
+}
+
+.mt-n1 {
+  margin-top: -0.25rem;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    padding: 0.5rem;
+    margin-right: 0.25rem;
+  }
+}
+
+.zoom-img {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .zoom-img:hover {
+    transform: scale(1.1);
+  }
