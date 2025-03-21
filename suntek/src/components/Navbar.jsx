@@ -9,6 +9,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import suntechLogo from "../assets/logo.jpeg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -111,7 +112,7 @@ const Navbar = () => {
             }`}
           >
             {/* Logo y Nombre - Parte modificada para ser más grande */}
-            <div className="d-flex align-items-center">
+            <Link to="/" className="d-flex align-items-center">
               <div
                 className={`rounded-circle logo-container ${
                   isScrolled ? "bg-white bg-opacity-10" : ""
@@ -123,11 +124,13 @@ const Navbar = () => {
                   className={`transition ${
                     isScrolled ? "logo-small" : "logo-large"
                   } rounded shadow border border-4 border-white`}
-                  style={{ width: isScrolled ? "150px" : "200px", height: isScrolled ? "45px" : "65px" }}
+                  style={{
+                    width: isScrolled ? "150px" : "200px",
+                    height: isScrolled ? "45px" : "65px",
+                  }}
                 />
               </div>
-    
-            </div>
+            </Link>
 
             {/* Buscador en versión desktop */}
             <div
@@ -162,7 +165,10 @@ const Navbar = () => {
             <div className="d-none d-md-flex align-items-center gap-2">
               <button className="btn btn-icon p-1 position-relative">
                 <Heart width="20" height="20" />
-                <span className="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger border border-light" style={{ fontSize: "0.6rem" }}>
+                <span
+                  className="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger border border-light"
+                  style={{ fontSize: "0.6rem" }}
+                >
                   2
                 </span>
                 <span className="visually-hidden">Favoritos</span>
@@ -170,17 +176,26 @@ const Navbar = () => {
 
               <button className="btn btn-icon p-1 position-relative">
                 <ShoppingCart width="20" height="20" />
-                <span className="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger border border-light" style={{ fontSize: "0.6rem" }}>
+                <span
+                  className="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger border border-light"
+                  style={{ fontSize: "0.6rem" }}
+                >
                   3
                 </span>
                 <span className="visually-hidden">Carrito</span>
               </button>
 
-              <button className="btn btn-light text-primary px-2 py-1 rounded-pill d-flex align-items-center gap-1 position-relative">
+              <Link
+                to="/login"
+                className="btn btn-light text-primary px-2 py-1 rounded-pill d-flex align-items-center gap-1 position-relative"
+              >
                 <User width="18" height="18" />
                 <span className="fw-medium small">Iniciar Sesión</span>
-                <span className="position-absolute top-0 end-0 translate-middle bg-success rounded-circle border border-2 border-white status-indicator d-none d-md-block" style={{ width: "10px", height: "10px" }}></span>
-              </button>
+                <span
+                  className="position-absolute top-0 end-0 translate-middle bg-success rounded-circle border border-2 border-white status-indicator d-none d-md-block"
+                  style={{ width: "10px", height: "10px" }}
+                ></span>
+              </Link>
             </div>
           </div>
 
@@ -405,7 +420,7 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-      
+
       {/* Spacer to prevent content from hiding behind the fixed navbar */}
       <div style={{ height: "60px" }} className="d-md-block"></div>
       <div style={{ height: "20px" }} className="d-none d-md-block"></div>
